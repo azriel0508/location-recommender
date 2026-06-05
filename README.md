@@ -1,41 +1,40 @@
-[Link to Group Doc](https://docs.google.com/document/d/1eXN51GvDNt0YDFEwOpTr5mmRmX8Dusm4kUlPkmp5ZNE/edit?tab=t.0)
-# Description
-Develop an application that is similar to Letterboxd, but for physical locations such as bars, restaurants and social locations.
+# Placemark — Location Review App
 
-Users create a profile and can immediately start reviewing locations, such as writing about their experience, upload photos, send their friends places they should visit if they’re around a certain area.
+> CS335 Software Engineering Group Project · Maynooth University · Microsoft Mentorship Programme
 
-There is a large emphasis on using geo-data to classify location (restaurant, club, bar etc.) and track the user’s physical location to see if they are beside a location that is highly recommended by their friends.
+A social location review platform — think Letterboxd, but for real-world places. Users discover and share reviews of locations filtered through their social network, with geo-proximity notifications when friends have rated somewhere nearby.
 
----
+## 🔐 My Role — Authentication & Backend
+- Implemented **Microsoft Entra External ID** (PKCE OAuth 2.0 flow) for all user authentication
+- Azure AD JWTs validated on every Spring Boot API request via a custom security filter
+- **Zero password storage** — user identity is derived entirely from the Azure OID claim
+- Auto-provisioning on first login — sign-up and sign-in are the same single flow
+- Resolved live OAuth errors (AADSTS50011, AADSTS50020) during Microsoft demo preparation
 
-# Scenarios
+## 🛠 Tech Stack
 
-## Scenario 1
-Kate spends a weekend in Galway, enjoys a seaside restaurant, and shares her experience on the app. A month later, her friend visits Galway, notices Kate’s post about the same restaurant, tries it herself, and records her own experience.
+| Layer | Technology |
+|---|---|
+| Frontend | React Native (Expo) |
+| Backend | Spring Boot REST API |
+| Authentication | Microsoft Entra External ID (PKCE + JWT) |
+| Database | PostgreSQL + PostGIS |
+| File Storage | Azure Blob Storage |
+| Hosting | Azure App Service |
 
-## Scenario 2
-Samuel goes to a club and complains that the spot was too crowded and poorly organized. He writes about his experience. The club organizers take note, and plan accordingly for their next event.
+## ✨ Key Features
+- Social feed of friends' location reviews
+- Geo-proximity push notifications using PostGIS `ST_DWithin` spatial queries
+- Location search, rating, and review creation
+- Secure token-based auth with no password column in the database
 
-## Scenario 3
-James doesn’t know what to get at a restaurant as there are a lot of good options to choose from. He checks the app, and notices that his sister highly recommends a dish. He trusts his sister’s judgement and enjoys the selection.
+## 👥 Team
+**Felix Elmido** (Auth & Backend) · Jack James (Database) · Jack Duffin · Joel VG · Joye Zhang · Hamed Adeniji  
+**Mentors:** Dominic & Victor — Microsoft Ireland
 
----
-
-# Technical Objectives
-
-- Figure out how to store data reliably such as users’ photos and textual recommendations.
-- Utilize geo-data to figure out where the person is at a certain time and recommend locations. Think about whether the user wants recommendations in the first place, i.e. if they are at work, they are most likely not looking for a restaurant to go to.
-- Think about how to model and design social networks for groups of friends.
-
----
-
-# Possible Features & Extensions
-
-- Proximity alerts if a user is near a highly-rated location their friends have been to.
-- Event capacity and crowd reporting.
-- Verified reviews and moderation tools to mitigate abuse and fake posts.
-- Location filtering (restaurant-only, vegan-only, only visited by {friend}.)
-- Engagement from owners.
-- In-app achievements and micro-badges (First Dish, Crowd Reporter).
-- Accessibility flags for wheelchair users, quiet seating etc.
-- Sentiment analysis to show how opinions about a location or service have changed over time.
+## 📁 Structure
+- `/backend` — Spring Boot REST API
+- `/frontend` — React Native (Expo) mobile app
+- `/database` — PostgreSQL schema + PostGIS setup
+- `/docs` — Architecture docs and demo materials
+- `/research` — Initial project research
