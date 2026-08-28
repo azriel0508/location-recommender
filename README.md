@@ -1,10 +1,10 @@
-# Placemark — Location Review App
+# Placemark - Location Review App
 
 > CS335 Software Engineering Group Project · Maynooth University · Microsoft Mentorship Programme
 
 A social location review platform — think Letterboxd, but for real-world places. Users discover and share reviews of locations filtered through their social network, with geo-proximity notifications when friends have rated somewhere nearby.
 
-## 🔐 My Role — Authentication & Backend
+## 🔐 My Role - Authentication & Backend
 - Implemented **Microsoft Entra External ID** (PKCE OAuth 2.0 flow) for all user authentication
 - Azure AD JWTs validated on every Spring Boot API request via a custom security filter
 - **Zero password storage** — user identity is derived entirely from the Azure OID claim
@@ -29,7 +29,7 @@ A social location review platform — think Letterboxd, but for real-world place
 - Secure token-based auth with no password column in the database
 
 ## 👥 Team
-**Felix Elmido** (Auth & Backend) · Jack James (Database) · Jack Duffin · Joel VG · Joye Zhang · Hamed Adeniji  
+**Felix Elmido** (Auth & Backend) · Jack James (Database) · Jack Duffin (Backend) · Joel Vinu George (Backend) · Joye Zhang (Frontend) · Hamed Adeniji (Frontend) 
 **Mentors:** Dominic & Victor — Microsoft Ireland
 
 ## 📁 Structure
