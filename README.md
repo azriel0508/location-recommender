@@ -10,7 +10,7 @@ A social location review platform — think Letterboxd, but for real-world place
 - **Zero password storage** - user identity is derived entirely from the Azure OID claim
 - Auto-provisioning on first login - sign-up and sign-in are the same single flow
 - Resolved live OAuth errors (AADSTS50011, AADSTS50020) during Microsoft demo preparation
-- Presented the whole project infront of Microsoft Software Engineers
+- Presented the whole project (live demo) infront of Microsoft Software Engineers
 
 ## 🛠 Tech Stack
 
