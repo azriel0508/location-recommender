@@ -7,8 +7,8 @@ A social location review platform — think Letterboxd, but for real-world place
 ## 🔐 My Role - Authentication & Backend
 - Implemented **Microsoft Entra External ID** (PKCE OAuth 2.0 flow) for all user authentication
 - Azure AD JWTs validated on every Spring Boot API request via a custom security filter
-- **Zero password storage** — user identity is derived entirely from the Azure OID claim
-- Auto-provisioning on first login — sign-up and sign-in are the same single flow
+- **Zero password storage** - user identity is derived entirely from the Azure OID claim
+- Auto-provisioning on first login - sign-up and sign-in are the same single flow
 - Resolved live OAuth errors (AADSTS50011, AADSTS50020) during Microsoft demo preparation
 
 ## 🛠 Tech Stack
